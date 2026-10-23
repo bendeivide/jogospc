@@ -1,0 +1,7 @@
+^README\.Rmd$
+^data-raw$
+^.*\.Rproj$
+^\.Rproj\.user$
+^\.positai$
+^\.claude$
+questionamentos

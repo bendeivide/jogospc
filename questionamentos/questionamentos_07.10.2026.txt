@@ -1,0 +1,78 @@
+1) Existe em algumas funcoes o argumento "n_partidas", e geralmente
+   se capta esta informacao no codigo usando a referencia da primeira
+   partida, porque o numero de partidas por rodada geralmente eh
+   o mesmo. O problema eh quando em uma rodada um determinado jogo
+   nao ocorre. Por exemplo, se considerarmos 20 times no Bras-A,
+   temos 10 partidas por rodada. Mas, quando um dos jogo nao ocorre
+   esta rodada nao poderia ser 10 mais. E aí?
+2) Não consegui entender a finalidade do argumento nsim na função sim().
+   Preciso estudar melhor!
+3) O argumento rodada de sim(), especifica a rodada desejada para a previsao.
+   Por exemplo, supomos rodada = 2; mas se no banco de dados (data),
+   não tivermos os resultados da 1ª rodada, o que o código faz?
+4) O objeto "data" de sim() ou prevCBA() deve ter o padrão como captamos
+   da página da CBF, por exemplo, e não como recomendado por Luis Fernando.
+   Isso porque é uma trabalheira fazer esta conversão. Ainda mais, após fazer
+   esta adaptação, ele criou a função classific() que entrega os resultados
+   do jeito que a CBF (ou similar) informa; achei contraditório a estratégia.
+   Outra coisa, eh que ele deve apresentar todas as rodadas do campeonato,
+   porque se não informado isso, tanto os argumentos n_partidas quanto
+   n_rodadas não são captadas para a função sim() que é chamada internamente
+   na função prevCBA(). Portanto, a estrutura desse objeto é muito importante
+   para o bom funcionamento da função prevCBA().
+5) Os resultados de prevCBA() estão simulados pensando que o campeonato
+   acabaria na rodada indicada no argumento "rodada"? Por exemplo, veja esta
+   saída para a rodada = 3,
+
+   > prevCBA(data, rodada, meanCBPfm, meanCBPsm,
++         meanCBPfv, meanCBPsv, nsim, CopaBR,
++         Lib)
+$`Tabela de probabilidades para Campeao/Libertadores/Sulamericana/Rebaixamento`
+   Time  Camp Liber   Sul   Reb
+1   COR 0.236 1.000 0.000 0.035
+2   CAP 0.104 1.000 0.000 0.055
+3   FLA 0.080 0.538 0.300 0.094
+4   VAS 0.055 0.429 0.345 0.127
+5   PAL 0.068 0.487 0.331 0.100
+6   GRE 0.083 0.536 0.301 0.091
+7   SAO 0.039 0.383 0.341 0.165
+8   AME 0.049 0.433 0.346 0.118
+9   INT 0.045 0.378 0.370 0.136
+10  SAN 0.052 0.404 0.348 0.147
+11  CAM 0.031 0.320 0.326 0.214
+12  FLU 0.050 0.425 0.365 0.112
+13  BAH 0.013 0.273 0.361 0.224
+14  BOT 0.032 0.321 0.346 0.204
+15  VIT 0.012 0.253 0.365 0.255
+16  CEA 0.013 0.205 0.341 0.302
+17  SPO 0.013 0.184 0.331 0.335
+18  CHA 0.007 0.163 0.303 0.393
+19  CRU 0.010 0.174 0.354 0.346
+20  PAR 0.008 0.094 0.226 0.547
+
+$`Tabela de probabilidades da rodada`
+   Rodada Time1 Time2   PVM   EMP   PVV
+21      3   AME   VIT 0.631 0.219 0.150
+22      3   INT   CRU 0.589 0.288 0.123
+23      3   CAM   COR 0.273 0.239 0.488
+24      3   BAH   CAP 0.450 0.348 0.202
+25      3   CEA   FLA 0.404 0.299 0.297
+26      3   FLU   SAO 0.439 0.371 0.190
+27      3   PAL   CHA 0.710 0.167 0.123
+28      3   PAR   SPO 0.359 0.237 0.404
+29      3   BOT   GRE 0.311 0.319 0.370
+30      3   SAN   VAS 0.512 0.297 0.191
+
+Estes resultados são considerados se o campeonato acabasse na rodada 3?
+
+6) Por exemplo, este ano aconteceu depois da 20ª rodada algum jogo para
+   trás não ter sido realizado, e o que acontece, se este jogo fosse realizado
+   no calendário do ano já na 23ª rodada, por exemplo, para completar esta rodada
+   lá atrás as funções meanCBPfm_atual() e suas variantes não levam em consideração.
+   O que essas funções fazem é, se o argumento "rodada" na função precCBA() assumir
+   "rodada = 10", ele só computa as médias dos gols da 9ª rodada para trás. Mas no
+   caso anterior, suponha que a rodada faltante tenha sido na 14ª rodada, mas já
+   estejamos na 23ª rodada, se eu peço para fazer a previsão da 14ª rodada,
+   a função mencionada só usará como referência os gols da 13ª para baixo, sendo que
+   já temos jogos realizados para frente, e aí???? Esta função precisa ser melhorada.
+
