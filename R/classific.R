@@ -42,7 +42,7 @@ classificacao <- function(bd, rodada) {
       !is.na(GSV)
     )
 
-  dplyr::bind_rows(
+  aux2 <- dplyr::bind_rows(
     aux %>% dplyr::select(Time = Time1, GF = GFM, GS = GSM),
     aux %>% dplyr::select(Time = Time2, GF = GFV, GS = GSV)
   ) %>%
@@ -62,6 +62,13 @@ classificacao <- function(bd, rodada) {
     dplyr::mutate(Class = 1:20) %>%
     dplyr::select(Class, Time, P, J, V, E, D, GP, GC, SG) %>%
     as.data.frame()
+
+  # Atribuindo o obj aux2 atributos
+  class(aux2) <- "jogospc"
+  attr(aux2, "output") <- "tabcbfsa"
+
+  # Retorno do objeto aux2
+  return(aux2)
 }
 
 

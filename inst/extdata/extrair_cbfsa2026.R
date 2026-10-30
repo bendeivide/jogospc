@@ -13,7 +13,7 @@ library(dplyr)
 #   SAN = Santos SP     |  SAO = São Paulo SP  |  VAS = Vasco da Gama RJ
 #   VIT = Vitória BA    |  BAH = Bahia BA      |  CHA = Chapecoense SC
 # ------------------------------------------------------------------
-jogos <- tribble(
+jogos_2026 <- tribble(
   ~Rodada, ~Time1, ~Time2, ~Gols_Time1, ~Gols_Time2,
 
   # ===================== RODADA 1 =====================
@@ -389,88 +389,88 @@ jogos <- tribble(
   31, "COR", "VIT", 1, 1,
 
   # Rodada 32
-  32, "CRU", "REM", 0, 0,
-  32, "MIR", "SAO", 0, 0,
-  32, "INT", "BOT", 0, 0,
-  32, "VIT", "CAP", 0, 0,
-  32, "VAS", "COR", 0, 0,
-  32, "PAL", "RBB", 0, 0,
-  32, "CHA", "FLU", 0, 0,
-  32, "SAN", "BAH", 0, 0,
-  32, "CFC", "GRE", 0, 0,
-  32, "FLA", "CAM", 0, 0,
+  32, "CRU", "REM", 1, 0,
+  32, "MIR", "SAO", 1, 1,
+  32, "INT", "BOT", 3, 0,
+  32, "VIT", "CAP", 1, 1,
+  32, "VAS", "COR", 3, 2,
+  32, "PAL", "RBB", 2, 0,
+  32, "CHA", "FLU", 2, 1,
+  32, "SAN", "BAH", 1, 1,
+  32, "CFC", "GRE", 0, 1,
+  32, "FLA", "CAM", 3, 2,
 
   # Rodada 33
-  33, "FLU", "INT", 0, 0,
+  33, "FLU", "INT", 2, 1,
   33, "SAN", "PAL", 0, 0,
-  33, "RBB", "CHA", 0, 0,
-  33, "BAH", "SAO", 0, 0,
-  33, "REM", "BOT", 0, 0,
-  33, "CAM", "CRU", 0, 0,
-  33, "CFC", "VIT", 0, 0,
-  33, "VAS", "FLA", 0, 0,
+  33, "RBB", "CHA", 3, 0,
+  33, "BAH", "SAO", 3, 2,
+  33, "REM", "BOT", 2, 1,
+  33, "CAM", "CRU", 0, 1,
+  33, "CFC", "VIT", NA, NA,
+  33, "VAS", "FLA", 1, 3,
   33, "GRE", "CAP", 0, 0,
-  33, "COR", "MIR", 0, 0,
+  33, "COR", "MIR", NA, NA,
 
   # Rodada 34
-  34, "RBB", "SAN", 0, 0,
-  34, "CHA", "MIR", 0, 0,
-  34, "INT", "COR", 0, 0,
-  34, "FLA", "GRE", 0, 0,
-  34, "CAP", "VAS", 0, 0,
-  34, "BOT", "CAM", 0, 0,
-  34, "SAO", "CFC", 0, 0,
-  34, "PAL", "REM", 0, 0,
-  34, "CRU", "BAH", 0, 0,
-  34, "VIT", "FLU", 0, 0,
+  34, "RBB", "SAN", NA, NA,
+  34, "CHA", "MIR", NA, NA,
+  34, "INT", "COR", NA, NA,
+  34, "FLA", "GRE", NA, NA,
+  34, "CAP", "VAS", NA, NA,
+  34, "BOT", "CAM", NA, NA,
+  34, "SAO", "CFC", NA, NA,
+  34, "PAL", "REM", NA, NA,
+  34, "CRU", "BAH", NA, NA,
+  34, "VIT", "FLU", NA, NA,
 
   # Rodada 35
-  35, "FLA", "CAP", 0, 0,
-  35, "VAS", "INT", 0, 0,
-  35, "SAO", "FLU", 0, 0,
-  35, "COR", "BOT", 0, 0,
-  35, "MIR", "CAM", 0, 0,
-  35, "CRU", "PAL", 0, 0,
-  35, "GRE", "BAH", 0, 0,
-  35, "CFC", "SAN", 0, 0,
-  35, "VIT", "RBB", 0, 0,
-  35, "REM", "CHA", 0, 0,
+  35, "FLA", "CAP", NA, NA,
+  35, "VAS", "INT", NA, NA,
+  35, "SAO", "FLU", NA, NA,
+  35, "COR", "BOT", NA, NA,
+  35, "MIR", "CAM", NA, NA,
+  35, "CRU", "PAL", NA, NA,
+  35, "GRE", "BAH", NA, NA,
+  35, "CFC", "SAN", NA, NA,
+  35, "VIT", "RBB", NA, NA,
+  35, "REM", "CHA", NA, NA,
 
   # Rodada 36
-  36, "FLU", "MIR", 0, 0,
-  36, "BOT", "SAO", 0, 0,
-  36, "SAN", "GRE", 0, 0,
-  36, "PAL", "FLA", 0, 0,
-  36, "RBB", "VAS", 0, 0,
-  36, "CAM", "COR", 0, 0,
-  36, "INT", "VIT", 0, 0,
-  36, "CAP", "REM", 0, 0,
-  36, "BAH", "CFC", 0, 0,
-  36, "CHA", "CRU", 0, 0,
+  36, "FLU", "MIR", NA, NA,
+  36, "BOT", "SAO", NA, NA,
+  36, "SAN", "GRE", NA, NA,
+  36, "PAL", "FLA", NA, NA,
+  36, "RBB", "VAS", NA, NA,
+  36, "CAM", "COR", NA, NA,
+  36, "INT", "VIT", NA, NA,
+  36, "CAP", "REM", NA, NA,
+  36, "BAH", "CFC", NA, NA,
+  36, "CHA", "CRU", NA, NA,
 
   # Rodada 37
-  37, "FLU", "CRU", 0, 0,
-  37, "BOT", "BAH", 0, 0,
-  37, "SAO", "REM", 0, 0,
-  37, "COR", "GRE", 0, 0,
-  37, "MIR", "CAP", 0, 0,
-  37, "CAM", "VAS", 0, 0,
-  37, "INT", "RBB", 0, 0,
-  37, "CFC", "FLA", 0, 0,
-  37, "VIT", "SAN", 0, 0,
-  37, "CHA", "PAL", 0, 0,
+  37, "FLU", "CRU", NA, NA,
+  37, "BOT", "BAH", NA, NA,
+  37, "SAO", "REM", NA, NA,
+  37, "COR", "GRE", NA, NA,
+  37, "MIR", "CAP", NA, NA,
+  37, "CAM", "VAS", NA, NA,
+  37, "INT", "RBB", NA, NA,
+  37, "CFC", "FLA", NA, NA,
+  37, "VIT", "SAN", NA, NA,
+  37, "CHA", "PAL", NA, NA,
 
   # Rodada 38
-  38, "FLA", "CHA", 0, 0,
-  38, "VAS", "VIT", 0, 0,
-  38, "SAN", "BOT", 0, 0,
-  38, "PAL", "CFC", 0, 0,
-  38, "RBB", "FLU", 0, 0,
-  38, "CRU", "INT", 0, 0,
-  38, "GRE", "MIR", 0, 0,
-  38, "CAP", "SAO", 0, 0,
-  38, "BAH", "CAM", 0, 0,
-  38, "REM", "COR", 0, 0
+  38, "FLA", "CHA", NA, NA,
+  38, "VAS", "VIT", NA, NA,
+  38, "SAN", "BOT", NA, NA,
+  38, "PAL", "CFC", NA, NA,
+  38, "RBB", "FLU", NA, NA,
+  38, "CRU", "INT", NA, NA,
+  38, "GRE", "MIR", NA, NA,
+  38, "CAP", "SAO", NA, NA,
+  38, "BAH", "CAM", NA, NA,
+  38, "REM", "COR", NA, NA
 )
 
 # ------------------------------------------------------------------
@@ -481,7 +481,7 @@ jogos <- tribble(
 #   GFV = Gols Feitos pelo Visitante
 # Garantindo: GFM == GSV  e  GFV == GSM
 # ------------------------------------------------------------------
-cbfsa2026 <- jogos %>%
+cbfsa2026_brutos <- jogos_2026 %>%
   mutate(
     GFM = as.integer(Gols_Time1),
     GSV = as.integer(Gols_Time1),

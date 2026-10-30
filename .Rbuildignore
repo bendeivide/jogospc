@@ -5,3 +5,5 @@
 ^\.positai$
 ^\.claude$
 questionamentos
+bd.csv
+est_codigo.R
