@@ -104,7 +104,7 @@ cbfsa2026 <- list(
               "SAO", "VAS", "VIT"),
   jogos = jogos_2026[1:3],
   resultados = cbfsa2026_brutos,
-  data_atualizacao = as.Date("28/10/2026", format = "%d/%m/%Y")
+  data_atualizacao = as.Date("04/11/2026", format = "%d/%m/%Y")
 )
 
 # Salva o objeto 'cbfsa2026' na pasta data/ do pacote
